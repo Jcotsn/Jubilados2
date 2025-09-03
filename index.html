@@ -16,7 +16,7 @@
     :root{
       --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#94a3b8;
       --brand:#22c55e; --brand-2:#16a34a; --shadow:0 20px 40px rgba(2,6,23,.35); --radius:18px;
-      /* nuevos acentos */
+      /* accent colors */
       --accent:#f97316;   /* coral/orange */
       --sea:#38bdf8;      /* sky/teal */
     }
@@ -26,7 +26,6 @@
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif;
       color:var(--text);
-      /* fondo con toques de color */
       background:
         radial-gradient(900px 420px at 85% 8%, rgba(56,189,248,.12), transparent 60%),
         radial-gradient(700px 320px at 12% 42%, rgba(249,115,22,.10), transparent 60%),
@@ -50,7 +49,6 @@
     .hero-grid{display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:center}
     .hero h1{
       font-size:clamp(28px,5vw,48px);line-height:1.1;margin:0 0 12px;
-      /* texto degradado */
       background:linear-gradient(90deg,#e2e8f0,#a7f3d0);
       -webkit-background-clip:text; background-clip:text; color:transparent;
     }
@@ -130,7 +128,8 @@
           </div>
         </div>
         <div class="image card">
-          <img src="hero.jpg" alt="Service showcase" />
+          <!-- Mediterranean coast sunset -->
+          <img src="https://source.unsplash.com/1600x1200/?mediterranean,spain,coast,sunset" alt="Mediterranean coast at sunset" />
         </div>
       </div>
       <div class="logos">
@@ -188,7 +187,8 @@
         </ul>
       </div>
       <div class="card">
-        <img src="about.jpg" alt="Mediterranean Dreamers team" />
+        <!-- Bright office team -->
+        <img src="https://source.unsplash.com/1200x800/?team,office,bright" alt="Local team in a bright office" />
       </div>
     </section>
 
@@ -196,7 +196,8 @@
       <h2>Mediterranean Social Club</h2>
       <div class="split">
         <div class="card">
-          <img src="club.jpg" alt="Social club activities" />
+          <!-- Seniors social activity by the sea -->
+          <img src="https://source.unsplash.com/1200x800/?seniors,group,beach,spain" alt="Retirees enjoying activities by the sea" />
         </div>
         <div>
           <p>Make friends fast and discover the area. Weekly activities, member discounts and a welcoming community from day one.</p>
@@ -288,9 +289,8 @@
   </footer>
 
   <script>
-    // Auto year in footer
+    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
-
     // Mobile menu
     const toggle = document.getElementById('toggle');
     const menu = document.getElementById('menu');
@@ -298,8 +298,7 @@
       const isOpen = getComputedStyle(menu).display !== 'none';
       menu.style.display = isOpen ? 'none' : 'flex';
     });
-
-    // Extra check email (además del validador del navegador)
+    // Extra email validation
     const form = document.getElementById('contact-form');
     form?.addEventListener('submit', (e) => {
       const email = document.getElementById('email').value;
