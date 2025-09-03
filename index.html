@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://www.mediterraneandreamers.com" />
@@ -14,71 +13,104 @@
   <meta property="og:image" content="/og-image.jpg" />
   <link rel="icon" href="/favicon.png" />
   <style>
-    :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#22c55e;--shadow:0 20px 40px rgba(2,6,23,.35);--radius:18px}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif;color:var(--text);
-         background:linear-gradient(180deg,#0b1220,#0f172a 22%,#0f172a 78%,#0b1220)}
+    :root{
+      --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#94a3b8;
+      --brand:#22c55e; --brand-2:#16a34a; --shadow:0 20px 40px rgba(2,6,23,.35); --radius:18px;
+      /* nuevos acentos */
+      --accent:#f97316;   /* coral/orange */
+      --sea:#38bdf8;      /* sky/teal */
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif;
+      color:var(--text);
+      /* fondo con toques de color */
+      background:
+        radial-gradient(900px 420px at 85% 8%, rgba(56,189,248,.12), transparent 60%),
+        radial-gradient(700px 320px at 12% 42%, rgba(249,115,22,.10), transparent 60%),
+        linear-gradient(180deg,#0b1220, #0f172a 22%, #0f172a 78%, #0b1220);
+    }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{width:min(1100px,92%);margin-inline:auto}
-    .btn{display:inline-block;padding:.9rem 1.1rem;border-radius:999px;background:var(--brand);color:#06210e;font-weight:700;box-shadow:var(--shadow)}
-    .btn-outline{background:transparent;border:1px solid #2dd46f;color:var(--text)}
+    .muted{color:var(--muted)}
+    .btn{display:inline-block;padding:.9rem 1.1rem;border-radius:999px;color:#06210e;font-weight:700;box-shadow:0 18px 36px rgba(34,197,94,.35); background:linear-gradient(90deg, var(--brand), #34d399)}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-outline{background:transparent;border:1px solid #34d399;color:var(--text)}
     header{position:sticky;top:0;backdrop-filter:saturate(160%) blur(8px);background:rgba(2,6,23,.55);border-bottom:1px solid rgba(148,163,184,.12);z-index:50}
     nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
     .brand img{width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.15)}
     .menu{display:flex;gap:18px;align-items:center}
     .mobile-toggle{display:none;border:1px solid rgba(148,163,184,.2);padding:8px 12px;border-radius:10px;background:transparent;color:var(--text)}
-    .card{background:linear-gradient(180deg,#0c1322,#0f172a);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);box-shadow:var(--shadow)}
-    section{padding:48px 0} h1{line-height:1.1}
-    footer{padding:24px 0;color:var(--muted);border-top:1px solid rgba(148,163,184,.12)}
-    @media (max-width: 900px){
-      .menu{display:none}.mobile-toggle{display:block}
-    }
-  </style>
 
-  <style>
     .hero{padding:64px 0 24px}
     .hero-grid{display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:center}
-    .hero h1{font-size:clamp(28px,5vw,48px);margin:0 0 12px}
+    .hero h1{
+      font-size:clamp(28px,5vw,48px);line-height:1.1;margin:0 0 12px;
+      /* texto degradado */
+      background:linear-gradient(90deg,#e2e8f0,#a7f3d0);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
     .hero p{color:var(--muted);font-size:clamp(15px,2.4vw,18px)}
     .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .hero .image{aspect-ratio:4/3;border-radius:18px;overflow:hidden;border:1px solid rgba(148,163,184,.12)}
+    .card{background:linear-gradient(180deg,#0c1322,#0f172a);border:1px solid rgba(56,189,248,.18);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero .image{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(148,163,184,.12)}
+    .hero .image img, #about img, #club img{width:100%;height:100%;object-fit:cover}
+
     .logos{opacity:.9;display:grid;grid-template-columns:repeat(5,1fr);gap:20px;align-items:center;justify-items:center;padding:18px 0 8px}
     .logos img{filter:grayscale(100%) contrast(110%) brightness(1.15);opacity:.75;height:28px}
+
+    section{padding:48px 0}
+    h2{font-size:clamp(22px,3.5vw,32px);margin:0 0 14px}
+    h2::after{content:"";display:block;width:64px;height:3px;margin-top:6px;background:linear-gradient(90deg,var(--sea),var(--accent));border-radius:999px;opacity:.7}
+
     .features{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
     .feature{padding:18px}
     .feature h3{margin:0 0 6px}
     .feature p{margin:0;color:var(--muted)}
+
     .split{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center}
+
     .testis{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
     .testi{padding:18px;border-left:4px solid var(--brand);opacity:.95}
+    .testi p{margin:0 0 10px}
+    .testi .who{color:var(--muted);font-size:14px}
+
     .pricing{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
     .price{padding:22px}
+
     .contact-grid{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+    form{display:grid;gap:12px}
     input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.22);background:#0b1220;color:var(--text)}
     label{font-size:14px;color:var(--muted)}
-    @media (max-width:900px){
-      .hero-grid,.features,.split,.testis,.pricing,.contact-grid{grid-template-columns:1fr}
+
+    footer{padding:24px 0;color:var(--muted);border-top:1px solid rgba(148,163,184,.12)}
+
+    @media (max-width: 900px){
+      .hero-grid, .features, .split, .testis, .pricing, .contact-grid{grid-template-columns:1fr}
       .logos{grid-template-columns:repeat(3,1fr)}
+      .menu{display:none}
+      .mobile-toggle{display:block}
     }
   </style>
 </head>
 <body>
-  
   <header>
     <div class="container">
       <nav>
-        <a class="brand" href="/">
-          <img src="/logo.png" alt="Mediterranean Dreamers logo" />
+        <a class="brand" href="#home">
+          <img src="logo.png" alt="Mediterranean Dreamers logo" />
           <span>Mediterranean Dreamers</span>
         </a>
         <div class="menu" id="menu">
-          <a href="/#services">Services</a>
-          <a href="/#about">About</a>
-          <a href="/#club">Social Club</a>
-          <a href="/#plans">Plans</a>
-          <a href="/#contact">Contact</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#club">Social Club</a>
+          <a href="#plans">Plans</a>
+          <a href="#contact">Contact</a>
           <a class="btn btn-outline" href="https://wa.me/34695099856" target="_blank" rel="noopener">WhatsApp</a>
         </div>
         <button class="mobile-toggle" id="toggle">Menu</button>
@@ -98,15 +130,15 @@
           </div>
         </div>
         <div class="image card">
-          <img src="/hero.jpg" alt="Service showcase">
+          <img src="hero.jpg" alt="Service showcase" />
         </div>
       </div>
       <div class="logos">
-        <img src="/logos/1.svg" alt="Client brand 1" />
-        <img src="/logos/2.svg" alt="Client brand 2" />
-        <img src="/logos/3.svg" alt="Client brand 3" />
-        <img src="/logos/4.svg" alt="Client brand 4" />
-        <img src="/logos/5.svg" alt="Client brand 5" />
+        <img src="logos/1.svg" alt="Client brand 1" />
+        <img src="logos/2.svg" alt="Client brand 2" />
+        <img src="logos/3.svg" alt="Client brand 3" />
+        <img src="logos/4.svg" alt="Client brand 4" />
+        <img src="logos/5.svg" alt="Client brand 5" />
       </div>
     </section>
 
@@ -156,14 +188,16 @@
         </ul>
       </div>
       <div class="card">
-        <img src="/about.jpg" alt="Mediterranean Dreamers team" />
+        <img src="about.jpg" alt="Mediterranean Dreamers team" />
       </div>
     </section>
 
     <section id="club">
       <h2>Mediterranean Social Club</h2>
       <div class="split">
-        <div class="card"><img src="/club.jpg" alt="Social club activities" /></div>
+        <div class="card">
+          <img src="club.jpg" alt="Social club activities" />
+        </div>
         <div>
           <p>Make friends fast and discover the area. Weekly activities, member discounts and a welcoming community from day one.</p>
           <ul>
@@ -237,7 +271,7 @@
           <input type="hidden" name="_subject" value="New enquiry — Mediterranean Dreamers">
           <input type="hidden" name="_redirect" value="https://www.mediterraneandreamers.com/thanks.html">
           <button class="btn" type="submit">Send</button>
-          <p style="color:var(--muted);font-size:14px">Or message us on <a href="https://wa.me/34695099856" target="_blank" rel="noopener">WhatsApp</a>. We reply in English, Spanish, French and German.</p>
+          <p class="muted" style="font-size:14px">Or message us on <a href="https://wa.me/34695099856" target="_blank" rel="noopener">WhatsApp</a>. We reply in English, Spanish, French and German.</p>
         </form>
         <div class="card" style="padding:0;overflow:hidden">
           <iframe title="Map" width="100%" height="100%" style="min-height:360px;border:0" loading="lazy" allowfullscreen
@@ -246,17 +280,34 @@
       </div>
     </section>
   </main>
-  
+
   <footer>
     <div class="container">
       © <span id="y"></span> Mediterranean Dreamers • <a href="/legal.html">Legal Notice</a> • <a href="/privacy.html">Privacy Policy</a>
     </div>
   </footer>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const toggle = document.getElementById('toggle'); const menu = document.getElementById('menu');
-    if(toggle && menu){ toggle.addEventListener('click', ()=>{ const isOpen = getComputedStyle(menu).display!=='none'; menu.style.display=isOpen?'none':'flex'; }); }
-  </script>
 
+  <script>
+    // Auto year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const toggle = document.getElementById('toggle');
+    const menu = document.getElementById('menu');
+    toggle?.addEventListener('click', () => {
+      const isOpen = getComputedStyle(menu).display !== 'none';
+      menu.style.display = isOpen ? 'none' : 'flex';
+    });
+
+    // Extra check email (además del validador del navegador)
+    const form = document.getElementById('contact-form');
+    form?.addEventListener('submit', (e) => {
+      const email = document.getElementById('email').value;
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        e.preventDefault();
+        alert('Please enter a valid email address.');
+      }
+    });
+  </script>
 </body>
 </html>
