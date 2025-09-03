@@ -16,9 +16,7 @@
     :root{
       --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#94a3b8;
       --brand:#22c55e; --brand-2:#16a34a; --shadow:0 20px 40px rgba(2,6,23,.35); --radius:18px;
-      /* accent colors */
-      --accent:#f97316;   /* coral/orange */
-      --sea:#38bdf8;      /* sky/teal */
+      --accent:#f97316; --sea:#38bdf8;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -56,7 +54,11 @@
     .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
     .card{background:linear-gradient(180deg,#0c1322,#0f172a);border:1px solid rgba(56,189,248,.18);border-radius:var(--radius);box-shadow:var(--shadow)}
     .hero .image{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(148,163,184,.12)}
-    .hero .image img, #about img, #club img{width:100%;height:100%;object-fit:cover}
+    .hero .image img{width:100%;height:100%;object-fit:cover}
+
+    /* FIX para contenedores de imagen en About y Club */
+    .media{padding:0; aspect-ratio: 16/10; overflow:hidden; border:1px solid rgba(148,163,184,.12)}
+    .media img{width:100%; height:100%; object-fit:cover}
 
     .logos{opacity:.9;display:grid;grid-template-columns:repeat(5,1fr);gap:20px;align-items:center;justify-items:center;padding:18px 0 8px}
     .logos img{filter:grayscale(100%) contrast(110%) brightness(1.15);opacity:.75;height:28px}
@@ -127,7 +129,7 @@
             <a class="btn btn-outline" href="#club">Join the Social Club</a>
           </div>
         </div>
-        <div class="image card">
+        <div class="image card hero image">
           <!-- Mediterranean coast sunset -->
           <img src="https://source.unsplash.com/1600x1200/?mediterranean,spain,coast,sunset" alt="Mediterranean coast at sunset" />
         </div>
@@ -186,7 +188,7 @@
           <li>End-to-end support: paperwork to leisure</li>
         </ul>
       </div>
-      <div class="card">
+      <div class="card media">
         <!-- Bright office team -->
         <img src="https://source.unsplash.com/1200x800/?team,office,bright" alt="Local team in a bright office" />
       </div>
@@ -195,7 +197,7 @@
     <section id="club">
       <h2>Mediterranean Social Club</h2>
       <div class="split">
-        <div class="card">
+        <div class="card media">
           <!-- Seniors social activity by the sea -->
           <img src="https://source.unsplash.com/1200x800/?seniors,group,beach,spain" alt="Retirees enjoying activities by the sea" />
         </div>
@@ -289,16 +291,13 @@
   </footer>
 
   <script>
-    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
-    // Mobile menu
     const toggle = document.getElementById('toggle');
     const menu = document.getElementById('menu');
     toggle?.addEventListener('click', () => {
       const isOpen = getComputedStyle(menu).display !== 'none';
       menu.style.display = isOpen ? 'none' : 'flex';
     });
-    // Extra email validation
     const form = document.getElementById('contact-form');
     form?.addEventListener('submit', (e) => {
       const email = document.getElementById('email').value;
