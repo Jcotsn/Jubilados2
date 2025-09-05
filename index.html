@@ -49,11 +49,8 @@
     .hero p{color:var(--muted);font-size:clamp(15px,2.4vw,18px)} .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
 
     /* contenedores de imagen con altura */
-    .hero .image,.media{padding:0;aspect-ratio:16/10;min-height:260px;overflow:hidden;border:1px solid var(--line)}
+    .hero .image,.media{padding:0;aspect-ratio:16/10;min-height:260px;overflow:hidden;border:1px solid var(--line);background:#eef5fb}
     .hero .image img,.media img{width:100%;height:100%;object-fit:cover}
-
-    .logos{opacity:.95;display:grid;grid-template-columns:repeat(5,1fr);gap:20px;align-items:center;justify-items:center;padding:18px 0 8px}
-    .logos img{filter:grayscale(100%) contrast(110%) brightness(1.1);opacity:.75;height:28px}
 
     .features{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
     .feature{padding:18px}.feature h3{margin:0 0 6px}.feature p{margin:0;color:var(--muted)}
@@ -75,7 +72,7 @@
 
     @media (max-width:900px){
       .hero-grid,.features,.split,.testis,.pricing,.contact-grid{grid-template-columns:1fr}
-      .logos{grid-template-columns:repeat(3,1fr)} .menu{display:none} .mobile-toggle{display:block}
+      .menu{display:none} .mobile-toggle{display:block}
     }
   </style>
 </head>
@@ -109,16 +106,9 @@
           </div>
         </div>
         <div class="image card">
-          <!-- FOTO REALISTA: pareja senior paseando por la playa -->
-          <img src="https://source.unsplash.com/1600x1000/?elderly,couple,beach,spain,sunset" alt="Senior couple walking by a Mediterranean beach at sunset">
+          <!-- usa el archivo local -->
+          <img src="hero.jpg" alt="Mediterranean coast at sunset">
         </div>
-      </div>
-      <div class="logos">
-        <img src="logos/1.svg" alt="Client brand 1" />
-        <img src="logos/2.svg" alt="Client brand 2" />
-        <img src="logos/3.svg" alt="Client brand 3" />
-        <img src="logos/4.svg" alt="Client brand 4" />
-        <img src="logos/5.svg" alt="Client brand 5" />
       </div>
     </section>
 
@@ -149,8 +139,7 @@
         </ul>
       </div>
       <div class="card media">
-        <!-- FOTO REALISTA: equipo en oficina luminosa -->
-        <img src="https://source.unsplash.com/1200x800/?team,office,bright,spain" alt="Local team in a bright office">
+        <img src="about.jpg" alt="Local team in a bright office">
       </div>
     </section>
 
@@ -159,8 +148,7 @@
       <h2>Mediterranean Social Club</h2>
       <div class="split">
         <div class="card media">
-          <!-- FOTO REALISTA: grupo de seniors en terraza junto al mar -->
-          <img src="https://source.unsplash.com/1200x800/?seniors,terrace,beach,spain,drinks" alt="Retirees enjoying a seaside terrace">
+          <img src="club.jpg" alt="Retirees enjoying activities by the sea">
         </div>
         <div>
           <p>Make friends fast and discover the area. Weekly activities, member discounts and a welcoming community from day one.</p>
@@ -190,42 +178,4 @@
       <div class="testis">
         <blockquote class="testi card"><p>“They handled everything when we arrived in Dénia. Total peace of mind.”</p><div class="who">Peter H. · Germany</div></blockquote>
         <blockquote class="testi card"><p>“Bank account opened and GP assigned within a week.”</p><div class="who">Sophie L. · France</div></blockquote>
-        <blockquote class="testi card"><p>“The social club made it easy to meet friends and explore.”</p><div class="who">John M. · UK</div></blockquote>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-grid">
-        <form action="https://formspree.io/f/mwpnrgwn" method="POST" class="card" id="contact-form">
-          <div><label for="name">Name</label><input id="name" name="name" required placeholder="Your name" /></div>
-          <div><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@example.com" /></div>
-          <div><label for="msg">Message</label><textarea id="msg" name="message" rows="4" required placeholder="Tell us what you need (languages: en/es/fr/de)"></textarea></div>
-          <input type="hidden" name="_subject" value="New enquiry — Mediterranean Dreamers">
-          <input type="hidden" name="_redirect" value="https://www.mediterraneandreamers.com/thanks.html">
-          <button class="btn" type="submit">Send</button>
-          <p class="muted" style="font-size:14px">Or message us on <a href="https://wa.me/34695099856" target="_blank" rel="noopener">WhatsApp</a>. We reply in English, Spanish, French and German.</p>
-        </form>
-        <div class="card" style="padding:0;overflow:hidden">
-          <iframe title="Map" width="100%" height="100%" style="min-height:360px;border:0" loading="lazy" allowfullscreen
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.0802!2d0.1057!3d38.8400!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzguODQwMCwgMC4xMDU3!5e0!3m2!1sen!2ses!4v0000000000"></iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © <span id="y"></span> Mediterranean Dreamers • <a href="/legal.html">Legal Notice</a> • <a href="/privacy.html">Privacy Policy</a>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const toggle = document.getElementById('toggle'), menu = document.getElementById('menu');
-    toggle?.addEventListener('click', ()=>{ const open=getComputedStyle(menu).display!=='none'; menu.style.display=open?'none':'flex'; });
-    document.getElementById('contact-form')?.addEventListener('submit',(e)=>{ const email=document.getElementById('email').value; if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ e.preventDefault(); alert('Please enter a valid email address.'); }});
-  </script>
-</body>
-</html>
+        <blockquote class="testi card"><p>“The social club made it easy to meet friend
