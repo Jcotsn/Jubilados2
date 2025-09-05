@@ -6,29 +6,16 @@
   <link rel="canonical" href="https://www.mediterraneandreamers.com" />
   <title>Mediterranean Dreamers — Relocation & lifestyle services for retirees on Spain's Mediterranean coast</title>
   <meta name="description" content="We help retirees settle along Spain's Mediterranean coast — Dénia, Oliva, Gandia, Jávea and Moraira — housing, paperwork, banking, taxes, healthcare and a welcoming social club." />
-  <meta name="keywords" content="retirees, retirement, Mediterranean coast, Spain, Denia, Oliva, Gandia, Javea, Moraira, relocation, housing, banking, taxes, healthcare, social club" />
-  <meta property="og:title" content="Mediterranean Dreamers" />
-  <meta property="og:description" content="Live your Mediterranean retirement. We handle the rest: housing, paperwork, banking, taxes, healthcare and community." />
-  <meta property="og:type" content="website" />
   <meta property="og:image" content="/og-image.jpg" />
   <link rel="icon" href="/favicon.png" />
-
   <style>
     /* ===== THEME: COASTAL DAYLIGHT (claro) ===== */
     :root{
-      --bg:#f7f9fb;          /* base muy clara */
-      --card:#ffffff;        /* tarjetas */
-      --text:#0b1220;        /* texto principal */
-      --muted:#475569;       /* gris azulado */
-      --line:#e2e8f0;        /* bordes suaves */
-      --brand:#22c55e;       /* verde marca */
-      --accent:#f97316;      /* coral cálido */
-      --sea:#0ea5a6;         /* turquesa mar */
-      --shadow:0 20px 40px rgba(2,6,23,.08);
-      --radius:18px;
+      --bg:#f7f9fb; --card:#ffffff; --text:#0b1220; --muted:#475569; --line:#e2e8f0;
+      --brand:#22c55e; --accent:#f97316; --sea:#0ea5a6;
+      --shadow:0 20px 40px rgba(2,6,23,.08); --radius:18px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
     body{
       margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif; color:var(--text);
       background:
@@ -36,91 +23,59 @@
         radial-gradient(700px 320px at 12% 42%, rgba(249,115,22,.08), transparent 60%),
         linear-gradient(180deg,#fefcf8,#f3f6fb 60%,#eef5fb);
     }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
     .container{width:min(1100px,92%);margin-inline:auto}
     .muted{color:var(--muted)}
 
-    /* Header */
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(160%) blur(8px);
-      background:rgba(255,255,255,.78);
-      border-bottom:1px solid var(--line);
-    }
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line)}
     nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
     .brand img{width:34px;height:34px;border-radius:10px;border:1px solid rgba(0,0,0,.06)}
     .menu{display:flex;gap:18px;align-items:center}
     .mobile-toggle{display:none;border:1px solid var(--line);padding:8px 12px;border-radius:10px;background:transparent;color:var(--text)}
 
-    /* Buttons */
-    .btn{display:inline-block;padding:.9rem 1.1rem;border-radius:999px;color:#06210e;font-weight:700;
-         background:linear-gradient(90deg,var(--brand),#34d399); box-shadow:0 18px 36px rgba(34,197,94,.25)}
-    .btn:hover{transform:translateY(-1px)}
-    .btn.btn-outline{background:transparent;border:1px solid #34d399;color:#065f46}
+    .btn{display:inline-block;padding:.9rem 1.1rem;border-radius:999px;color:#06210e;font-weight:700;background:linear-gradient(90deg,var(--brand),#34d399);box-shadow:0 18px 36px rgba(34,197,94,.25)}
+    .btn:hover{transform:translateY(-1px)} .btn.btn-outline{background:transparent;border:1px solid #34d399;color:#065f46}
 
-    /* Sections */
     section{padding:48px 0}
     h2{font-size:clamp(22px,3.5vw,32px);margin:0 0 14px}
     h2::after{content:"";display:block;width:64px;height:3px;margin-top:6px;background:linear-gradient(90deg,var(--sea),var(--accent));border-radius:999px;opacity:.8}
 
-    /* Cards */
-    .card{
-      background:linear-gradient(180deg,#ffffff,#f8fafc);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
+    .card{background:linear-gradient(180deg,#ffffff,#f8fafc);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
 
-    /* Hero */
     .hero{padding:64px 0 24px}
     .hero-grid{display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:center}
     .hero h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:0 0 12px;color:#0f172a}
-    .hero p{color:var(--muted);font-size:clamp(15px,2.4vw,18px)}
-    .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .hero p{color:var(--muted);font-size:clamp(15px,2.4vw,18px)} .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
 
-    /* Image containers with height */
-    .hero .image,
-    .media{padding:0; aspect-ratio:16/10; min-height:260px; overflow:hidden; border:1px solid var(--line)}
-    .hero .image img, .media img{width:100%; height:100%; object-fit:cover}
+    /* contenedores de imagen con altura */
+    .hero .image,.media{padding:0;aspect-ratio:16/10;min-height:260px;overflow:hidden;border:1px solid var(--line)}
+    .hero .image img,.media img{width:100%;height:100%;object-fit:cover}
 
-    /* Logos strip */
     .logos{opacity:.95;display:grid;grid-template-columns:repeat(5,1fr);gap:20px;align-items:center;justify-items:center;padding:18px 0 8px}
     .logos img{filter:grayscale(100%) contrast(110%) brightness(1.1);opacity:.75;height:28px}
 
-    /* Features */
     .features{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
-    .feature{padding:18px}
-    .feature h3{margin:0 0 6px}
-    .feature p{margin:0;color:var(--muted)}
+    .feature{padding:18px}.feature h3{margin:0 0 6px}.feature p{margin:0;color:var(--muted)}
 
-    /* Split sections */
     .split{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center}
 
-    /* Testimonials */
     .testis{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
     .testi{padding:18px;border-left:4px solid var(--brand);background:#fff}
-    .testi p{margin:0 0 10px}
     .testi .who{color:var(--muted);font-size:14px}
 
-    /* Pricing */
     .pricing{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
     .price{padding:22px}
 
-    /* Contact */
     .contact-grid{display:grid;gap:18px;grid-template-columns:1fr 1fr}
     form{display:grid;gap:12px}
-    input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#ffffff;color:var(--text)}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#ffffff;color:var(--text)}
 
-    /* Footer */
     footer{padding:24px 0;color:#334155;border-top:1px solid var(--line)}
 
-    @media (max-width: 900px){
-      .hero-grid, .features, .split, .testis, .pricing, .contact-grid{grid-template-columns:1fr}
-      .logos{grid-template-columns:repeat(3,1fr)}
-      .menu{display:none}
-      .mobile-toggle{display:block}
+    @media (max-width:900px){
+      .hero-grid,.features,.split,.testis,.pricing,.contact-grid{grid-template-columns:1fr}
+      .logos{grid-template-columns:repeat(3,1fr)} .menu{display:none} .mobile-toggle{display:block}
     }
   </style>
 </head>
@@ -133,11 +88,7 @@
           <span>Mediterranean Dreamers</span>
         </a>
         <div class="menu" id="menu">
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#club">Social Club</a>
-          <a href="#plans">Plans</a>
-          <a href="#contact">Contact</a>
+          <a href="#services">Services</a><a href="#about">About</a><a href="#club">Social Club</a><a href="#plans">Plans</a><a href="#contact">Contact</a>
           <a class="btn btn-outline" href="https://wa.me/34695099856" target="_blank" rel="noopener">WhatsApp</a>
         </div>
         <button class="mobile-toggle" id="toggle">Menu</button>
@@ -158,8 +109,8 @@
           </div>
         </div>
         <div class="image card">
-          <!-- Usa el archivo local -->
-          <img src="hero.jpg" alt="Mediterranean coast at sunset">
+          <!-- FOTO REALISTA: pareja senior paseando por la playa -->
+          <img src="https://source.unsplash.com/1600x1000/?elderly,couple,beach,spain,sunset" alt="Senior couple walking by a Mediterranean beach at sunset">
         </div>
       </div>
       <div class="logos">
@@ -198,7 +149,8 @@
         </ul>
       </div>
       <div class="card media">
-        <img src="about.jpg" alt="Local team in a bright office">
+        <!-- FOTO REALISTA: equipo en oficina luminosa -->
+        <img src="https://source.unsplash.com/1200x800/?team,office,bright,spain" alt="Local team in a bright office">
       </div>
     </section>
 
@@ -207,7 +159,8 @@
       <h2>Mediterranean Social Club</h2>
       <div class="split">
         <div class="card media">
-          <img src="club.jpg" alt="Retirees enjoying activities by the sea">
+          <!-- FOTO REALISTA: grupo de seniors en terraza junto al mar -->
+          <img src="https://source.unsplash.com/1200x800/?seniors,terrace,beach,spain,drinks" alt="Retirees enjoying a seaside terrace">
         </div>
         <div>
           <p>Make friends fast and discover the area. Weekly activities, member discounts and a welcoming community from day one.</p>
@@ -269,25 +222,10 @@
   </footer>
 
   <script>
-    // Año footer
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Menú móvil
-    const toggle = document.getElementById('toggle');
-    const menu = document.getElementById('menu');
-    toggle?.addEventListener('click', () => {
-      const open = getComputedStyle(menu).display !== 'none';
-      menu.style.display = open ? 'none' : 'flex';
-    });
-
-    // Validación email
-    document.getElementById('contact-form')?.addEventListener('submit', (e) => {
-      const email = document.getElementById('email').value;
-      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-        e.preventDefault();
-        alert('Please enter a valid email address.');
-      }
-    });
+    const toggle = document.getElementById('toggle'), menu = document.getElementById('menu');
+    toggle?.addEventListener('click', ()=>{ const open=getComputedStyle(menu).display!=='none'; menu.style.display=open?'none':'flex'; });
+    document.getElementById('contact-form')?.addEventListener('submit',(e)=>{ const email=document.getElementById('email').value; if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ e.preventDefault(); alert('Please enter a valid email address.'); }});
   </script>
 </body>
 </html>
